@@ -1,0 +1,38 @@
+#######################################
+# Syntax Coloring Map For MPU3050
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Gyroscope	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+readRaw	KEYWORD2
+readDegPerSecond	KEYWORD2
+setLowPassFilterBw	KEYWORD2
+setRange	KEYWORD2
+readRawTemp	KEYWORD2
+readTempDegrees	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+MPU3050_LOWPASS_256HZ	LITERAL1
+MPU3050_LOWPASS_188HZ	LITERAL1
+MPU3050_LOWPASS_98HZ	LITERAL1
+MPU3050_LOWPASS_42HZ	LITERAL1
+MPU3050_LOWPASS_20HZ	LITERAL1
+MPU3050_LOWPASS_10HZ	LITERAL1
+MPU3050_LOWPASS_5HZ	LITERAL1
+
+MPU3050_RANGE_PM250	LITERAL1
+MPU3050_RANGE_PM500	LITERAL1
+MPU3050_RANGE_PM1000	LITERAL1
+MPU3050_RANGE_PM2000	LITERAL1
