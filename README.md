@@ -10,3 +10,4 @@ It will work with any MPU3050 device over I2C.
 *  Setting the Range - plus or minus 250, 500, 1000, 2000 deg/s
 *  Reading raw temperature data
 *  Reading temperature data in degrees
+*  Calibration

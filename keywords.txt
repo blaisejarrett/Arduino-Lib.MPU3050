@@ -19,6 +19,7 @@ setLowPassFilterBw	KEYWORD2
 setRange	KEYWORD2
 readRawTemp	KEYWORD2
 readTempDegrees	KEYWORD2
+setOffsets	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
