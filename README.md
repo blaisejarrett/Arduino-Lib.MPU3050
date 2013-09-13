@@ -11,3 +11,6 @@ It will work with any MPU3050 device over I2C.
 *  Reading raw temperature data
 *  Reading temperature data in degrees
 *  Calibration
+
+## Documentation
+* [Generated docs here](http://blaisejarrett.github.com/Arduino-Lib.MPU3050)
