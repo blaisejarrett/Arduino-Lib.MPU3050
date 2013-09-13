@@ -168,6 +168,57 @@ int8_t Gyroscope::setDLPFReg(uint8_t lowpass, uint8_t range)
     return 0;
 } 
 
+int8_t Gyroscope::setOffsets(int16_t x, int16_t y, int16_t z)
+{
+    int8_t ret;
+
+    ret = writei2c2s(MPU3050_REG_XOFFH, MPU3050_REG_XOFFL, x);
+
+    if (ret != 0)
+        return ret;
+
+    ret = writei2c2s(MPU3050_REG_YOFFH, MPU3050_REG_YOFFL, y);
+
+    if (ret != 0)
+        return ret;
+
+    ret = writei2c2s(MPU3050_REG_ZOFFH, MPU3050_REG_ZOFFL, z);
+
+    if (ret != 0)
+        return ret;
+
+    return 0;
+}
+
+int8_t Gyroscope::writei2c2s(uint8_t regmsb, uint8_t reglsb, int16_t data)
+{
+    uint8_t msb_data, lsb_data;
+
+    uint16_t tmp;
+    tmp = (uint16_t)data;
+    tmp &= 0x00FF;
+
+    lsb_data = tmp;
+
+    tmp = (uint16_t)data;
+    tmp = tmp >> 8;
+    tmp &= 0x00FF;
+
+    msb_data = tmp;
+
+    int8_t ret;
+
+    ret = i2cWriteByte(regmsb, msb_data);
+    if (ret != 0)
+        return ret;
+
+    ret = i2cWriteByte(reglsb, lsb_data);
+    if (ret != 0)
+        return ret;
+
+    return 0;
+}
+
 void Gyroscope::conv2Byte2Signed16(uint8_t LSB, uint8_t MSB, int16_t * dest)
 {
     *dest = 0;
